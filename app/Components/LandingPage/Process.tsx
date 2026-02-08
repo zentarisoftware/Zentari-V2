@@ -31,8 +31,35 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="container">
-      <div className="relative bg-slate-900 text-white rounded-[3rem] p-12">
+    <section className="container py-12" data-scroll-section>
+      <div className="mb-8">
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 block"
+        >
+          Our Process
+        </motion.span>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="heading"
+        >
+          Built with purpose, <br />
+          delivered with precision
+        </motion.h1>
+      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative bg-slate-900 text-white rounded-[3rem] p-18 border overflow-hidden"
+      >
         {/* Background Gradients */}
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-[-50%] left-[-20%] w-[800px] h-[800px] bg-blue-500 rounded-full blur-[120px]"></div>
@@ -41,25 +68,34 @@ const Process = () => {
 
         <div className="mx-auto relative z-10">
           <div className="mb-20">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 block">
-              Our Process
-            </span>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-white mb-6">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-4xl md:text-5xl font-light tracking-tight text-white mb-6"
+            >
               From concept to{" "}
               <span className="font-semibold text-white">code.</span>
-            </h2>
+            </motion.h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {/* Connecting Line (Desktop) */}
-            <div className="absolute top-12 left-0 w-full h-px bg-slate-800 hidden lg:block z-0"></div>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+              className="absolute top-12 left-0 h-px bg-slate-800 hidden lg:block z-0"
+            ></motion.div>
 
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.6 + index * 0.2 }}
                 viewport={{ once: true }}
                 className="relative z-10"
               >
@@ -79,7 +115,7 @@ const Process = () => {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -5,6 +5,10 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 
 const Nav_items = [
   {
+    name: "Home",
+    href: "/",
+  },
+  {
     name: "Services",
     href: "/services",
   },
@@ -19,6 +23,10 @@ const Nav_items = [
   {
     name: "About",
     href: "/about",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
   },
 ];
 

@@ -32,7 +32,7 @@ const Hero = () => {
       ></div>
       <div className="grid-overlay absolute inset-0 pointer-events-none"></div>
 
-      <div className="lorix-card relative flex flex-col items-center shadow-2xl overflow-hidden">
+      <div className="lorix-card h-full relative flex flex-col items-center justify-between shadow-2xl overflow-hidden">
         {/* Content Layer */}
         <div className="content-layer w-full h-full flex flex-col justify-between relative z-30 pb-8 pt-10 px-6">
           {/* 1. Hero Main Content (Centered) */}
