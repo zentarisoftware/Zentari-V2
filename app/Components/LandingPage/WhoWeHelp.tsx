@@ -60,16 +60,16 @@ const WhoWeHelp = () => {
               >
                 Who We Serve
               </motion.span>
-              <motion.h2
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-4xl md:text-5xl font-light text-slate-900 mb-8 leading-tight"
+                className="heading"
               >
                 Tailored solutions for every stage of{" "}
                 <span className="font-medium">growth.</span>
-              </motion.h2>
+              </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

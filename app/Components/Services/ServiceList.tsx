@@ -181,7 +181,7 @@ const ServiceItem = ({
               </div>
             </div>
             {/* mirror effect */}
-            <div className="h-40 bg-linear-to-b from-slate-50 to-white"></div>
+            <div className="hidden md:block h-40 bg-linear-to-b from-slate-50 to-white"></div>
           </div>
         </div>
       </div>

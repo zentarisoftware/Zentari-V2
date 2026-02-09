@@ -56,7 +56,7 @@ const Pricing = () => {
       <div className="container relative z-10">
         
         {/* Header */}
-        <div className="max-w-2xl mb-20">
+        <div className="max-w-2xl mb-18">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,10 +70,10 @@ const Pricing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-light tracking-tight text-slate-900 mb-6"
+            className="heading"
           >
             Clear value. <br/>
-            <span className="font-medium">Transparent pricing.</span>
+          Transparent pricing.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

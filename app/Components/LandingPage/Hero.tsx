@@ -1,8 +1,20 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { motion, useMotionValue, useTransform, animate, useInView } from "motion/react";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  useInView,
+} from "motion/react";
 
-const Counter = ({ value, duration = 1.5 }: { value: number; duration?: number }) => {
+const Counter = ({
+  value,
+  duration = 1.5,
+}: {
+  value: number;
+  duration?: number;
+}) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const ref = useRef(null);
@@ -20,10 +32,9 @@ const Counter = ({ value, duration = 1.5 }: { value: number; duration?: number }
 const Hero = () => {
   return (
     <section
-      className="h-[calc(100vh-4rem)] w-full flex items-center justify-center relative"
+      className="min-h-[calc(100vh-4rem)] w-full flex items-center justify-center relative py-12 md:py-0"
       data-scroll-section
     >
-    
       {/* Background Layers */}
       <div
         className="gradient-layer absolute inset-0 pointer-events-none"
@@ -43,14 +54,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span className="floater">
-                Zentari for your business
-              </span>
+              <span className="floater">Zentari for your business</span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1
-              className="text-5xl md:text-7xl lg:text-7xl font-medium tracking-tight text-slate-900 leading-[0.95] mb-8"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-7xl font-medium tracking-tight text-slate-900 leading-[0.95] mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
@@ -74,23 +83,25 @@ const Hero = () => {
             </motion.p>
 
             {/* CTA */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <motion.div
+                className="w-full sm:w-auto"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               >
-                <button className="px-10 py-4 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-all transform hover:scale-105 shadow-xl active:scale-95 text-[15px]">
+                <button className="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-all transform hover:scale-105 shadow-xl active:scale-95 text-[15px]">
                   Start Free
                 </button>
               </motion.div>
               {/* CTA */}
               <motion.div
+                className="w-full sm:w-auto"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               >
-                <button className="px-10 py-4 border border-slate-200 text-slate-900 rounded-full font-medium hover:bg-slate-200 transition-all transform hover:scale-105 shadow-xl duration-200 active:scale-95 text-[15px]">
+                <button className="w-full sm:w-auto px-10 py-4 border border-slate-200 text-slate-900 rounded-full font-medium hover:bg-slate-200 transition-all transform hover:scale-105 shadow-xl duration-200 active:scale-95 text-[15px]">
                   View our work
                 </button>
               </motion.div>
@@ -99,13 +110,13 @@ const Hero = () => {
 
           {/* Trust & Metrics Section */}
           <motion.div
-            className="w-full border-t border-slate-100/80 mt-12 lg:mt-0 flex flex-col lg:flex-row items-center justify-between gap-8 pt-4"
+            className="w-full border-t border-slate-100/80 mt-12 lg:mt-0 flex flex-col lg:flex-row items-center justify-between gap-8 pt-8 pb-4 lg:pt-4 lg:pb-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
             {/* Left: Key Metrics (Social Proof) */}
-            <div className="flex items-center gap-8 md:gap-12">
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 md:gap-12">
               <div className="text-center md:text-left">
                 <span className="flex items-center justify-center md:justify-start text-xl font-semibold md:text-2xl text-slate-900 leading-none">
                   <Counter value={3} />+
@@ -135,12 +146,17 @@ const Hero = () => {
             </div>
 
             {/* Right: Tech Stack Badges (Authority) */}
-            <div className="flex flex-col md:flex-row items-center gap-4 bg-slate-50/50 border border-slate-100 px-6 py-3 rounded-2xl backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row items-center gap-4 bg-slate-50/50 border border-slate-100 px-6 py-4 md:py-3 rounded-2xl backdrop-blur-sm w-full md:w-auto">
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
                 Enterprise Solutions
               </span>
-              <div className="flex items-center gap-2">
-                {["Web Apps", "Mobile Apps", "AI Solutions", "Custom Software"].map((tech) => (
+              <div className="flex flex-wrap justify-center items-center gap-2">
+                {[
+                  "Web Apps",
+                  "Mobile Apps",
+                  "AI Solutions",
+                  "Custom Software",
+                ].map((tech) => (
                   <span
                     key={tech}
                     className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-[11px] font-semibold text-slate-600 shadow-sm hover:border-slate-300 transition-colors cursor-default"
