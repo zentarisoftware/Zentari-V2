@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 const pricingPlans = [
   {
     name: "MVP Launchpad",
-    price: "$15k",
+    price: "₱15k",
     period: "starting price",
     description: "Ideal for startups needing a market-ready product in weeks, not months.",
     features: [
@@ -20,7 +20,7 @@ const pricingPlans = [
   },
   {
     name: "Growth Partner",
-    price: "$8k",
+    price: "₱8k",
     period: "per month",
     description: "Dedicated engineering power to scale your product and iterate fast.",
     features: [

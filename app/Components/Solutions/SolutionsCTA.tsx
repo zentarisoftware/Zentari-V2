@@ -8,8 +8,9 @@ const SolutionsCTA = () => {
       className="py-32 bg-slate-900 overflow-hidden relative"
       data-scroll-section
     >
-      {/* Background Ambience */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
+     {/* Background Gradients */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-slate-800/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
 
       <div className="container relative z-10 text-center">
         <motion.div

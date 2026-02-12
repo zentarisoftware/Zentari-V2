@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   motion,
   useScroll,
@@ -95,7 +96,12 @@ const Nav = () => {
           className="text-2xl font-light tracking-tight text-slate-900 ml-2"
           onClick={() => setIsOpen(false)}
         >
-          Zentari
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={120}
+            height={120}
+          />
         </Link>
 
         {/* Desktop Navigation Links */}

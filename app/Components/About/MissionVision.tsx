@@ -12,7 +12,7 @@ const MissionVision = () => {
       {/* Ambient Light */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
 
-      <div className="container relative z-10 px-6">
+      <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32 items-stretch">
           {/* Mission */}
           <motion.div

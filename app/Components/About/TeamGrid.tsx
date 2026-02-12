@@ -32,7 +32,7 @@ const team = [
 const TeamGrid = () => {
   return (
     <section className="py-24 bg-white" data-scroll-section>
-      <div className="container px-6">
+      <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
             <span className="text-xs font-bold tracking-widest uppercase text-slate-400 mb-2 block">
@@ -43,9 +43,7 @@ const TeamGrid = () => {
             </h2>
           </div>
           <div className="max-w-md text-slate-500 text-sm md:text-right">
-            We are a lean, senior-heavy team. You won't be handed off to
-            juniors. The people you speak with are the people building your
-            product.
+           We’re a team of modern, driven builders who take pride in doing things right — from architecture to launch.
           </div>
         </div>
 

@@ -5,7 +5,7 @@ import WhoWeHelp from "./Components/LandingPage/WhoWeHelp";
 import Process from "./Components/LandingPage/Process";
 import WhyUs from "./Components/LandingPage/WhyUs";
 import FeaturedWork from "./Components/LandingPage/FeaturedWork";
-import CTA from "./Components/LandingPage/CTA";
+import CTASection from "./Components/Portfolio/PortfolioCTA";
 
 export default function Home() {
   return (
@@ -17,7 +17,11 @@ export default function Home() {
       <Process />
       <WhyUs />
       <FeaturedWork />
-      <CTA />
+      <CTASection
+        text={"Ready to scale your"}
+        subtext={"Software?"}
+        label={"Get in Touch"}
+      />
     </main>
   );
 }

@@ -25,10 +25,10 @@ const values = [
 const Values = () => {
   return (
     <section className="py-24 md:py-32 bg-white" data-scroll-section>
-      <div className="container px-6">
+      <div className="container">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           {/* Sticky Sidebar */}
-          <div className="lg:w-1/3">
+          <div className="w-1/3">
             <div className="sticky top-32">
               <span className="text-xs font-bold tracking-widest uppercase text-slate-400 mb-4 block">
                 Our Principles
@@ -51,7 +51,7 @@ const Values = () => {
           </div>
 
           {/* Values List */}
-          <div className="lg:w-2/3 space-y-12">
+          <div className="w-2/3 space-y-12">
             {values.map((value, i) => (
               <motion.div
                 key={i}
@@ -64,7 +64,7 @@ const Values = () => {
                 <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 group-hover:text-blue-900 transition-colors">
                   {value.title}
                 </h3>
-                <p className="text-lg text-slate-500 leading-relaxed max-w-xl group-hover:text-slate-600 transition-colors">
+                <p className="text-lg text-slate-500 leading-relaxed group-hover:text-slate-600 transition-colors">
                   {value.desc}
                 </p>
               </motion.div>

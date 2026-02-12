@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 const AboutHero = () => {
   return (
     <section
-      className="pt-40 pb-20 md:pt-52 md:pb-32 bg-slate-50 relative overflow-hidden"
+      className="pt-32 pb-20 container bg-slate-50 relative overflow-hidden"
       data-scroll-section
     >
       {/* Background Texture */}
@@ -27,7 +27,7 @@ const AboutHero = () => {
             <span className="text-sm font-bold tracking-widest uppercase text-blue-600 mb-6 block">
               Without Compromise
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium text-slate-900 leading-[1.05] tracking-tight mb-10">
+            <h1 className="text-5xl md:text-7xl font-medium text-slate-900 leading-[1.05] tracking-tight mb-10">
               We translate business <br className="hidden md:block" />
               complexity into <br className="hidden md:block" />
               <span className="text-slate-400">digital simplicity.</span>
@@ -38,7 +38,7 @@ const AboutHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-2xl font-light"
+            className="text-xl text-slate-600 leading-relaxed max-w-2xl font-light"
           >
             Zentari is a strategic engineering partner for ambitious companies.
             We don't just write code; we build the technical foundations that

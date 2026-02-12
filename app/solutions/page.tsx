@@ -1,14 +1,18 @@
 import React from "react";
 import SolutionsHero from "../Components/Solutions/SolutionsHero";
 import UseCases from "../Components/Solutions/UseCases";
-import SolutionsCTA from "../Components/Solutions/SolutionsCTA";
+import CTASection from "../Components/Portfolio/PortfolioCTA";
 
 export default function SolutionsPage() {
   return (
     <main className="bg-white min-h-screen">
       <SolutionsHero />
       <UseCases />
-      <SolutionsCTA />
+      <CTASection
+        text={"See yourself here?"}
+        subtext={"Let's discuss your specific use case."}
+        label={"Get in Touch"}
+      />
     </main>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import ServicesHero from "../Components/Services/ServicesHero";
 import ServiceList from "../Components/Services/ServiceList";
 import EngagementModels from "../Components/Services/EngagementModels";
-import ServicesCTA from "../Components/Services/ServicesCTA";
+import CTASection from "../Components/Portfolio/PortfolioCTA";
 
 export default function ServicesPage() {
   return (
@@ -10,7 +10,11 @@ export default function ServicesPage() {
       <ServicesHero />
       <ServiceList />
       <EngagementModels />
-      <ServicesCTA />
+      <CTASection
+        text={"Ready to scale your team?"}
+        subtext={"Let's find your perfect match."}
+        label={"Get in Touch"}
+      />
     </main>
   );
 }

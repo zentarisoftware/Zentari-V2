@@ -6,7 +6,7 @@ import MissionVision from "../Components/About/MissionVision";
 import WorkCulture from "../Components/About/WorkCulture";
 import Values from "../Components/About/Values";
 import TeamGrid from "../Components/About/TeamGrid";
-import PortfolioCTA from "../Components/Portfolio/PortfolioCTA";
+import CTASection from "../Components/Portfolio/PortfolioCTA";
 
 export default function AboutPage() {
   return (
@@ -17,8 +17,11 @@ export default function AboutPage() {
       <Values />
       <WorkCulture />
       <TeamGrid />
-      <PortfolioCTA />{" "}
-      {/* Reusing the CTA as it fits perfectly (Ready to write success story) */}
+      <CTASection
+        text={"Ready to write your own "}
+        subtext={"success story"}
+        label={"What's Next?"}
+      />
     </main>
   );
 }

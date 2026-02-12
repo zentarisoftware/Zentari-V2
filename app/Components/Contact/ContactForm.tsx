@@ -75,11 +75,11 @@ const ContactForm = () => {
               <option value="" disabled selected>
                 Select Project Type
               </option>
-              <option value="web-development">Web Application</option>
-              <option value="mobile-app">Mobile App</option>
-              <option value="system-architecture">System Architecture</option>
-              <option value="consulting">Tech Consulting</option>
-              <option value="other">Other</option>
+              <option defaultValue="web-development">Web Application</option>
+              <option defaultValue="mobile-app">Mobile App</option>
+              <option defaultValue="system-architecture">System Architecture</option>
+              <option defaultValue="consulting">Tech Consulting</option>
+              <option defaultValue="other">Other</option>
             </select>
             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
               <ArrowRight className="w-4 h-4 rotate-90" />

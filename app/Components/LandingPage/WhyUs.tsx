@@ -1,45 +1,45 @@
 "use client";
 import { motion } from "motion/react";
-import { Code2, TrendingUp, MessageSquareText, ArrowRight } from "lucide-react";
-
+import { Code2, TrendingUp, MessageSquareText, ArrowRight, ShieldCheck } from "lucide-react";
 const features = [
   {
     icon: <Code2 className="w-6 h-6" />,
-    title: "Custom-First Architecture",
+    title: "Custom-Engineered Solutions",
     description:
-      "We reject cookie-cutter templates. Your business logic is unique, and we engineer bespoke solutions that map perfectly to your operational workflows.",
+      "We build software around your exact business logic and workflows — no templates, no unnecessary features, just systems built to fit.",
     className: "md:col-span-3 md:row-span-1",
     bg: "bg-white",
     delay: 0.1,
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
-    title: "Scalability at the Core",
+    title: "Built for Scale",
     description:
-      "Built to handle 10x growth from day one. We design database schemas and server architectures that don't crumble under load.",
+      "Our architecture is designed to support growth, high traffic, and expanding operations without performance trade-offs.",
     className: "md:col-span-1 md:row-span-1",
     bg: "bg-white",
     delay: 0.2,
   },
   {
-    icon: <MessageSquareText className="w-6 h-6" />,
-    title: "Transparent Comms",
+    icon: <ShieldCheck className="w-6 h-6" />,
+    title: "Secure & Reliable",
     description:
-      "No black-box development. You get direct access to engineers, weekly sprint demos, and jargon-free updates.",
+      "We follow best practices in security, testing, and deployment to ensure your systems remain stable and protected.",
     className: "md:col-span-1 md:row-span-1",
-    bg: "bg-slate-900 text-white",
+    bg: "bg-white",
     delay: 0.3,
   },
   {
     icon: <MessageSquareText className="w-6 h-6" />,
-    title: "Transparent Comms",
+    title: "Transparent Collaboration",
     description:
-      "No black-box development. You get direct access to engineers, weekly sprint demos, and jargon-free updates.",
+      "You stay informed at every stage with structured updates, sprint reviews, and direct communication with our team.",
     className: "md:col-span-1 md:row-span-1",
     bg: "bg-slate-900 text-white",
-    delay: 0.3,
+    delay: 0.4,
   },
 ];
+
 
 const WhyUs = () => {
   return (
@@ -82,7 +82,7 @@ const WhyUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: feature.delay, duration: 0.5 }}
-              className={`p-8 md:p-12 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col justify-between border border-slate-100 ${feature.className} ${feature.bg}`}
+              className={`p-4 md:p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col justify-between border border-slate-100 ${feature.className} ${feature.bg}`}
             >
               <div className="mb-6">
                 <div

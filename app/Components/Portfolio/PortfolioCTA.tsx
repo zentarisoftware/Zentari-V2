@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const PortfolioCTA = () => {
+const CTASection = ({text, subtext, label}: {text: string, subtext: string, label: string}) => {
   return (
     <section
       className="py-32 bg-slate-900 text-white relative overflow-hidden"
@@ -22,11 +22,12 @@ const PortfolioCTA = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="text-sm font-bold tracking-widest uppercase text-slate-400 mb-6 block">
-            What's Next?
+            {label}
           </span>
           <h2 className="text-5xl md:text-7xl font-light tracking-tight mb-10 max-w-4xl mx-auto">
-            Ready to write your own <br />
-            <span className="font-bold text-white">success story</span>?
+            {text}
+            <br />
+            <span className="font-bold text-white">{subtext}</span>
           </h2>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
@@ -50,4 +51,4 @@ const PortfolioCTA = () => {
   );
 };
 
-export default PortfolioCTA;
+export default CTASection;

@@ -1,6 +1,51 @@
 "use client";
 import React from "react";
-import { Mail, MapPin, MessageSquare, Phone } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Instagram,
+  Facebook,
+  Linkedin,
+} from "lucide-react";
+
+const contactDetails = [
+  {
+    icon: Mail,
+    label: "Email Us",
+    value: "terd@zentariph.com",
+    href: "mailto:terd@zentariph.com",
+    hoverColor: "group-hover:bg-blue-600",
+  },
+  {
+    icon: Phone,
+    label: "Text / Call",
+    value: "+63 960 250 6993",
+    href: "tel:+639602506993",
+    hoverColor: "group-hover:bg-blue-600",
+  },
+  {
+    icon: Facebook,
+    label: "Facebook",
+    value: "Zentari Facebook",
+    href: "https://www.facebook.com/zentarisoftware",
+    hoverColor: "group-hover:bg-blue-600",
+  },
+  {
+    icon: Instagram,
+    label: "Instagram",
+    value: "@zentari",
+    href: "https://www.instagram.com/zentarisoftware/",
+    hoverColor: "group-hover:bg-pink-600",
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "Zentari Inc.",
+    href: "#",
+    hoverColor: "group-hover:bg-blue-700",
+  },
+];
 
 const ContactInfo = () => {
   return (
@@ -10,57 +55,28 @@ const ContactInfo = () => {
           Direct Channels
         </h3>
         <ul className="space-y-6">
-          <li>
-            <a
-              href="mailto:hello@zentari.com"
-              className="group flex items-start gap-4 hover:opacity-75 transition-opacity"
-            >
-              <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <Mail className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="block text-slate-900 font-medium">
-                  Email Us
-                </span>
-                <span className="block text-slate-500 text-sm">
-                  hello@zentari.com
-                </span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="tel:+6300000000000"
-              className="group flex items-start gap-4 hover:opacity-75 transition-opacity"
-            >
-              <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <Phone className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="block text-slate-900 font-medium">
-                  Text / Call
-                </span>
-                <span className="block text-slate-500 text-sm">
-                  +63 (000) 000-0000
-                </span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <div className="group flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
-                <MessageSquare className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="block text-slate-900 font-medium">
-                  Messaging Apps
-                </span>
-                <span className="block text-slate-500 text-sm">
-                  Telegram, WhatsApp, Viber available upon request.
-                </span>
-              </div>
-            </div>
-          </li>
+          {contactDetails.map((contact) => (
+            <li key={contact.label}>
+              <a
+                href={contact.href}
+                className="group flex items-start gap-4 hover:opacity-75 transition-opacity"
+              >
+                <div
+                  className={`w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 ${contact.hoverColor} group-hover:text-white transition-colors`}
+                >
+                  <contact.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="block text-slate-900 font-medium">
+                    {contact.label}
+                  </span>
+                  <span className="block text-slate-500 text-sm">
+                    {contact.value}
+                  </span>
+                </div>
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 

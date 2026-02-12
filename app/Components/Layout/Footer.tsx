@@ -64,7 +64,7 @@ const Footer = () => {
 
         {/* Big Text */}
         <div className="w-full items-center mt-10 select-none pointer-events-none">
-          <h1 className="text-[15vw] leading-[0.8] font-bold tracking-wider text-slate-900 uppercase">
+          <h1 className="text-[15vw] font-squada-one leading-[0.8] font-bold tracking-wider text-slate-900 uppercase">
             Zentari
           </h1>
           <h2 className="text-2xl text-slate-400 tracking-wider">Tech Solutions</h2>

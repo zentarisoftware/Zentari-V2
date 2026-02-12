@@ -7,73 +7,64 @@ const services = [
     id: "web-apps",
     title: "Custom Web Applications",
     description:
-      "Robust, scalable, and secure cloud-based applications tailored to your specific business workflows.",
+      "Secure, scalable web platforms built around your exact business processes — designed to improve efficiency and support long-term growth.",
     problems: [
-      "Replacing outdated legacy systems that slow you down",
-      "Consolidating fragmented data from multiple tools",
-      "Creating unique customer portals or SaaS products",
-      "Creating unique customer portals or SaaS products",
-      "Creating unique customer portals or SaaS products",
+      "Legacy systems slowing down operations",
+      "Fragmented data across multiple tools",
+      "Limited scalability as the business grows",
+      "Lack of ownership over critical systems",
     ],
-    audience: "SMEs & Startups scaling up",
-    outcome: "A centralized, high-performance platform owned by you.",
-    cta: "Discuss Web Application",
+    audience: "Growing SMEs & Scaling Startups",
+    outcome: "A centralized, scalable platform fully tailored to your operations.",
+    cta: "Build Your Web Application",
   },
   {
     id: "mobile-apps",
     title: "Mobile App Development",
     description:
-      "Native and cross-platform mobile experiences that engage users and extend your business reach.",
+      "High-performance mobile applications that strengthen customer engagement and empower teams on the go.",
     problems: [
-      "Engaging customers on their most-used devices",
-      "Enabling field teams with on-the-go tools",
-      "Modernizing customer loyalty and service access",
-      "Modernizing customer loyalty and service access",
-      "Modernizing customer loyalty and service access",
-      "Modernizing customer loyalty and service access",
-      "Modernizing customer loyalty and service access",
+      "Low customer engagement on mobile",
+      "Limited access to services outside office hours",
+      "Inefficient field team coordination",
+      "Missed opportunities for digital loyalty programs",
     ],
-    audience: "Consumer brands & Field Service teams",
-    outcome: "Seamless mobile experiences with high user retention.",
-    cta: "Discuss Mobile Strategy",
+    audience: "Consumer Brands & Field Operations Teams",
+    outcome: "Seamless mobile experiences that increase retention and operational efficiency.",
+    cta: "Launch Your Mobile App",
   },
   {
     id: "websites",
     title: "Website Design & Development",
     description:
-      "High-conversion marketing sites that blend aesthetic excellence with technical performance.",
+      "Conversion-focused websites that elevate your brand, build credibility, and generate qualified leads.",
     problems: [
-      "Low conversion rates on current site",
-      "Brand doesn't reflect company maturity",
-      "Slow load times affecting SEO rankings",
-      "Slow load times affecting SEO rankings",
-      "Slow load times affecting SEO rankings",
-      "Slow load times affecting SEO rankings",
-      "Slow load times affecting SEO rankings",
+      "Low conversion rates and poor user experience",
+      "Outdated branding that weakens trust",
+      "Slow performance affecting SEO and rankings",
+      "Difficulty updating or managing site content",
     ],
-    audience: "Marketing teams & Growing brands",
-    outcome: "A digital storefront that builds trust and drives leads.",
-    cta: "Discuss Website Redesign",
+    audience: "Marketing Teams & Growing Brands",
+    outcome: "A high-performing digital presence that attracts and converts customers.",
+    cta: "Upgrade Your Website",
   },
   {
     id: "automation",
-    title: "System Automation & Tools",
+    title: "System Automation & Integration",
     description:
-      "Streamlining operations by connecting your favorite tools and automating repetitive tasks.",
+      "Custom automation and system integrations that eliminate repetitive work and connect your entire business ecosystem.",
     problems: [
-      "Manual data entry causing human error",
-      "Disconnect between Sales, Marketing, and Ops tools",
-      "Wasted man-hours on repetitive processes",
-      "Wasted man-hours on repetitive processes",
-      "Wasted man-hours on repetitive processes",
-      "Wasted man-hours on repetitive processes",
-      "Wasted man-hours on repetitive processes",
+      "Manual processes consuming valuable time",
+      "Data silos between departments",
+      "Frequent human errors in reporting and operations",
+      "Inefficient handoffs between teams",
     ],
-    audience: "Operations & HR Departments",
-    outcome: "Reduced operational costs and freed-up employee time.",
-    cta: "Discuss Automation",
+    audience: "Operations, HR & Management Teams",
+    outcome: "Streamlined operations with reduced costs and improved productivity.",
+    cta: "Automate Your Operations",
   },
 ];
+
 
 const ServiceItem = ({
   service,
@@ -86,7 +77,7 @@ const ServiceItem = ({
 
   return (
     <div
-      className=" border-t border-slate-100 last:border-b"
+      className=" border-t border-slate-100 last:border-b "
       data-scroll-section
     >
       <div className="container">
@@ -134,8 +125,8 @@ const ServiceItem = ({
           </div>
 
           {/* Details Side */}
-          <div className="flex-1 pt-4 space-y-2 flex flex-col">
-            <div className="bg-slate-50 p-8  rounded-2xl">
+          <div className="flex-1 pt-4 space-y-2 flex flex-col ">
+            <div className="bg-slate-100 p-8  rounded-2xl">
               <div className="mb-8">
                 <h4 className="text-xl font-bold uppercase tracking-wider text-slate-900 mb-6">
                   Problems Solved
@@ -165,7 +156,7 @@ const ServiceItem = ({
                 </ul>
               </div>
 
-              <div className="grid grid-cols-2 gap-6 pt-6 border-t border-slate-200/60">
+              <div className="grid grid-cols-2 gap-6 pt-6 border-t border-slate-200/60 ">
                 <div>
                   <h4 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-2">
                     Ideal For
@@ -181,7 +172,7 @@ const ServiceItem = ({
               </div>
             </div>
             {/* mirror effect */}
-            <div className="hidden md:block h-40 bg-linear-to-b from-slate-50 to-white"></div>
+            <div className="hidden md:block h-40 bg-linear-to-b from-slate-100 to-white"></div>
           </div>
         </div>
       </div>

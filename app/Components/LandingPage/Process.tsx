@@ -17,17 +17,18 @@ const steps = [
   },
   {
     number: "03",
-    title: "Development",
+    title: "Development & Testing",
     description:
-      "Our engineers build your software using modern, reliable tech stacks with rigorous testing at every stage.",
+      "We build the solution using modern, reliable technologies with clean, scalable code practices.",
   },
   {
     number: "04",
-    title: "Launch & Support",
+    title: "Deployment & Support",
     description:
-      "We handle the deployment and provide ongoing monitoring and updates to ensure peak performance.",
+      "We deploy your system to production, configure infrastructure, and ensure a smooth go-live process.",
   },
 ];
+
 
 const Process = () => {
   return (
