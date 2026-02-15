@@ -1,55 +1,53 @@
 "use client";
-import React from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { useRef } from "react";
 
 const projects = [
   {
     id: "logistics",
     client: "Vanguard Logistics",
-    industry: "Supply Chain / SME",
+    image: "/projects/kaizen.png",
+    industry: "Supply Chain",
     year: "2024",
-    title: "Automating Global Freight Operations",
+    title: "Global Freight Operations",
     problem:
-      "Reliance on spreadsheets and email chains caused a 15% error rate in shipment tracking, leading to lost revenue and frustrated clients.",
+      "Reliance on spreadsheets caused a 15% error rate in shipment tracking.",
     solution:
-      "We built a centralized Logistics Management Platform (LMP) that automates tracking updates, generates instant quotes, and connects directly to carrier APIs.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Google Maps API"],
-    result: "40% Increase in operational efficiency",
-    metric: "40%",
-    metricLabel: "Efficiency Boost",
+      "Centralized Logistics Management Platform (LMP) automating tracking and quotes.",
+    tech: ["Next.js", "PostgreSQL", "Google Maps"],
+    result: "40% Efficiency Boost",
     bg: "bg-slate-50",
   },
   {
     id: "fintech",
     client: "Novus Finance",
-    industry: "FinTech / Startup",
+    industry: "FinTech",
+    image: "/projects/ayyan.png",
     year: "2025",
-    title: "Next-Gen Investment Dashboard",
+    title: "Next-Gen Investment",
     problem:
-      "Users found the legacy investment portal confusing and slow. Data latency was causing trust issues during high-volatility market periods.",
+      "Legacy portal was confusing and slow, causing trust issues during volatility.",
     solution:
-      "A real-time, WebSocket-powered dashboard designed with institutional-grade performance and consumer-grade UX.",
-    tech: ["React", "TypeScript", "WebSockets", "D3.js"],
-    result: "Top-rated financial app in region (4.9/5)",
-    metric: "4.9/5",
-    metricLabel: "User Rating",
+      "Real-time, WebSocket-powered dashboard with institutional-grade performance.",
+    tech: ["React", "WebSockets", "D3.js"],
+    result: "4.9/5 User Rating",
     bg: "bg-white",
   },
   {
     id: "retail",
     client: "Aura Home",
     industry: "E-Commerce",
+    image: "/projects/tt.png",
     year: "2023",
-    title: "Headless Commerce Migration",
+    title: "Headless Commerce",
     problem:
-      "Their Shopify theme was limiting custom bundle offers and causing 4s+ load times on mobile devices, killing conversion.",
+      "Shopify theme limited custom bundles and caused slow mobile load times.",
     solution:
-      "We migrated to a Headless architecture using Shopify Plus as the backend and a custom Next.js frontend for instant page loads.",
-    tech: ["Shopify Plus", "Next.js", "Vercel", "Tailwind"],
-    result: "Mobile conversion rate doubled in 3 months",
-    metric: "2x",
-    metricLabel: "Mobile Sales",
+      "Headless architecture using Shopify Plus backend and custom Next.js frontend.",
+    tech: ["Shopify Plus", "Next.js", "Vercel"],
+    result: "2x Mobile Sales",
     bg: "bg-slate-50",
   },
 ];
@@ -61,94 +59,107 @@ const ProjectItem = ({
   project: (typeof projects)[0];
   index: number;
 }) => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+
   return (
     <div
-      className={`py-24 border-t border-slate-200 ${project.bg}`}
+      ref={containerRef}
+      className={`relative min-h-screen flex items-center py-24 ${project.bg}`}
       data-scroll-section
     >
-      <div className="container">
-        {/* Header Row */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">
-              {project.client} — {project.industry}
-            </span>
-            <h2 className="text-4xl md:text-6xl font-light text-slate-900 tracking-tight leading-[1.1]">
-              {project.title}
-            </h2>
-          </div>
-          <div className="md:text-right">
-            <span className="text-sm font-medium text-slate-500 block">
-              {project.year}
-            </span>
-          </div>
-        </div>
+      <div className="container mx-auto">
+        <div
+          className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-24 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
+        >
+          {/* Text Content */}
+          <div className="w-full lg:w-1/2 space-y-10 z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <span className="px-4 py-1.5 rounded-full border border-slate-200 text-xs font-bold tracking-widest uppercase text-slate-500">
+                  {project.industry}
+                </span>
+                <span className="text-sm font-medium text-slate-400">
+                  {project.year}
+                </span>
+              </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-          {/* Left: Problem & Solution */}
-          <div className="lg:col-span-7 space-y-12">
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-4 border-l-2 border-red-500 pl-3">
-                The Challenge
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-                {project.problem}
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-4 border-l-2 border-blue-500 pl-3">
-                Our Solution
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-                {project.solution}
-              </p>
-            </div>
+              <h2 className="text-5xl md:text-7xl font-medium text-slate-900 leading-[1.05] tracking-tight mb-8">
+                {project.title}
+              </h2>
 
-            <div className="pt-6">
-              <div className="flex flex-wrap gap-2">
+              <div className="space-y-8">
+                <div className="border-l-2 border-slate-200 pl-6">
+                  <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">
+                    Challenge
+                  </h3>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    {project.problem}
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-slate-900 pl-6">
+                  <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">
+                    Solution
+                  </h3>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    {project.solution}
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-8 flex flex-wrap gap-3">
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1 bg-slate-200/50 text-slate-600 text-xs font-medium rounded-full"
+                    className="px-4 py-2 bg-white border border-slate-100 shadow-sm text-slate-600 text-xs font-semibold rounded-lg"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-            </div>
+
+              <div className="pt-10 flex items-center gap-8">
+                <div>
+                  <div className="text-3xl font-bold text-slate-900 tracking-tight">
+                    {project.result}
+                  </div>
+                  <div className="text-sm text-slate-500 font-medium mt-1">
+                    Key Outcome
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Right: The Impact (Hero Element) */}
-          <div className="lg:col-span-5 relative">
-            <div className="bg-slate-900 text-white rounded-[2rem] p-10 h-full flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-slate-800 rounded-full blur-[80px] -mr-20 -mt-20 opacity-50"></div>
+          {/* Image/Visual - Parallax Effect */}
+          <div className="w-full lg:w-1/2 aspect-[5/3] lg:aspect-9/7 relative">
+            <motion.div style={{ y }} className="absolute inset-0">
+              <div className="relative aspect-video w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl group cursor-pointer">
+                <Image
+                  fill
+                  src={project.image}
+                  alt={project.client}
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Overlay Interaction */}
+                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors duration-300" />
 
-              <div className="relative z-10">
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">
-                  Key Outcome
-                </span>
-                <p className="text-xl font-light leading-relaxed text-slate-200">
-                  {project.result}
-                </p>
+                <div className="absolute bottom-8 right-8 w-16 h-16 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <ArrowUpRight className="w-6 h-6" />
+                </div>
               </div>
-
-              <div className="mt-12 relative z-10">
-                <span className="text-6xl md:text-8xl font-bold tracking-tighter text-white block">
-                  {project.metric}
-                </span>
-                <span className="text-sm font-medium text-slate-400 uppercase tracking-widest block mt-2">
-                  {project.metricLabel}
-                </span>
-              </div>
-
-              <motion.button
-                whileHover={{ x: 5 }}
-                className="absolute bottom-10 right-10 w-12 h-12 bg-white rounded-full flex items-center justify-center text-slate-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <ArrowUpRight className="w-5 h-5" />
-              </motion.button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -158,10 +169,10 @@ const ProjectItem = ({
 
 const ProjectList = () => {
   return (
-    <section>
+    <section className="bg4-sl3ate-50">
       {projects.map((project, index) => (
         <ProjectItem key={project.id} project={project} index={index} />
-      ))}
+      ))}{" "}
     </section>
   );
 };
