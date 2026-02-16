@@ -1,67 +1,10 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  ArrowUpRight,
-  TrendingUp,
-  ShieldCheck,
-  Truck,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
-const projects = [
-  {
-    id: 1,
-    client: "FinFlow",
-    image: "/projects/tite.png",
-    category: "Fintech",
-    description:
-      "Re-engineering the core transaction processing engine for a high-growth Series B startup used by 50k+ daily users.",
-    stat: "$50M+",
-    statLabel: "Processed / Quarter",
-    tags: ["Node.js", "AWS", "Microservices"],
-    icon: <TrendingUp className="w-6 h-6 text-white" />,
-  },
-  {
-    id: 2,
-    client: "MediConnect",
-    image: "/projects/tite.png",
-    category: "Healthcare",
-    description:
-      "Developing a HIPAA-compliant scheduling architecture that synchronizes patient data across 40+ legacy hospital systems.",
-    stat: "-85%",
-    statLabel: "Scheduling Conflicts",
-    tags: ["React Native", "Firebase", "Python"],
-    icon: <ShieldCheck className="w-6 h-6 text-white" />,
-  },
-  {
-    id: 3,
-    client: "LogiTrack",
-    category: "Logistics",
-    image: "/projects/tite.png",
-    description:
-      "Real-time fleet intelligence dashboard combining IoT sensor data with predictive route optimization.",
-    stat: "15%",
-    statLabel: "Fuel Cost Reduction",
-    tags: ["Next.js", "Google Maps API", "IoT"],
-    icon: <Truck className="w-6 h-6 text-white" />,
-  },
-  {
-    id: 4,
-    client: "RetaiLoop",
-    category: "E-Commerce",
-    image: "/projects/tite.png",
-    description:
-      "Omnichannel inventory management system synchronizing physical stores with online marketplaces in real-time.",
-    stat: "3x",
-    statLabel: "Faster Restocking",
-    tags: ["React", "Shopify API", "Redis"],
-    icon: <ArrowUpRight className="w-6 h-6 text-white" />,
-  },
-];
+import { projects } from "@/app/Data";
 
 const FeaturedWork = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -84,11 +27,11 @@ const FeaturedWork = () => {
   };
 
   // Auto-play functionality
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, nextSlide]);
+  // useEffect(() => {
+  //   if (!isAutoPlaying) return;
+  //   const interval = setInterval(nextSlide, 5000);
+  //   return () => clearInterval(interval);
+  // }, [isAutoPlaying, nextSlide]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -134,7 +77,7 @@ const FeaturedWork = () => {
 
         {/* Carousel Container */}
         <div
-          className="relative w-full min-h-[500px] md:min-h-[600px] lg:min-h-[700px] flex items-center justify-center"
+          className="relative w-full min-h-[650px] md:min-h-[700px] lg:min-h-[600px] xl:min-h-[650px] flex items-center justify-center py-8"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
@@ -144,10 +87,10 @@ const FeaturedWork = () => {
               prevSlide();
               setIsAutoPlaying(false);
             }}
-            className="absolute left-4 md:left-8 lg:left-16 z-30 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 flex items-center justify-center hover:bg-slate-900 hover:border-slate-900 text-slate-900 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl group"
+            className="absolute left-2 md:left-4 lg:left-8 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 flex items-center justify-center hover:bg-slate-900 hover:border-slate-900 text-slate-900 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl group"
             aria-label="Previous project"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           <button
@@ -155,10 +98,10 @@ const FeaturedWork = () => {
               nextSlide();
               setIsAutoPlaying(false);
             }}
-            className="absolute right-4 md:right-8 lg:right-16 z-30 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 flex items-center justify-center hover:bg-slate-900 hover:border-slate-900 text-slate-900 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl group"
+            className="absolute right-2 md:right-4 lg:right-8 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 flex items-center justify-center hover:bg-slate-900 hover:border-slate-900 text-slate-900 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl group"
             aria-label="Next project"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           {/* Carousel Track */}
@@ -219,7 +162,7 @@ const FeaturedWork = () => {
                       duration: 0.6,
                       ease: [0.32, 0.72, 0, 1],
                     }}
-                    className={`absolute w-[90vw] md:w-[75vw] lg:w-[1100px] rounded-2xl overflow-hidden shadow-2xl bg-white ${
+                    className={`absolute w-[90vw] md:w-[85vw] lg:w-[75vw] rounded-2xl overflow-hidden shadow-2xl bg-white ${
                       isActive ? "cursor-default" : "cursor-pointer"
                     }`}
                     onClick={() => {
@@ -228,7 +171,7 @@ const FeaturedWork = () => {
                       setIsAutoPlaying(false);
                     }}
                   >
-                    <div className="flex flex-col md:flex-row h-full min-h-[500px] md:min-h-[550px]">
+                    <div className="flex flex-col-reverse lg:flex-row h-full min-h-[600px] lg:min-h-[550px]">
                       {/* Left Side - Content */}
                       <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -237,49 +180,38 @@ const FeaturedWork = () => {
                           x: isActive ? 0 : -20,
                         }}
                         transition={{ duration: 0.4, delay: 0.2 }}
-                        className="w-full md:w-1/3 p-8 md:p-10 lg:p-12 flex flex-col justify-between bg-slate-50"
+                        className="w-full lg:w-5/12 p-6 md:p-8 lg:p-10 flex flex-col justify-between bg-slate-50 relative z-10"
                       >
                         {/* Top Section */}
                         <div>
-                          {/* Category Badge & Icon */}
-                          <div className="flex items-center justify-between gap-3 mb-6">
-                            <div className="p-2.5 bg-slate-900 rounded-xl">
-                              {project.icon}
-                            </div>
-                            <span className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-200 text-slate-700 border border-slate-300">
-                              {project.category}
-                            </span>
-                          </div>
-
                           {/* Project Title */}
-                          <h3 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-slate-900">
-                            {project.client}
+                          <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 md:mb-4 tracking-tight text-slate-900 leading-tight">
+                            {project.title}
                           </h3>
 
                           {/* Description */}
-                          <p className="text-base text-slate-600 mb-8 leading-relaxed">
+                          <p className="text-xs md:text-sm lg:text-base text-slate-600 mb-4 md:mb-6 lg:mb-8 leading-relaxed line-clamp-3 md:line-clamp-none">
                             {project.description}
                           </p>
                         </div>
 
-                        {/* Bottom Section */}
-                        <div>
+                        <div className="mt-6 md:mt-0">
                           {/* Key Result */}
-                          <div className="mb-6 pb-6 border-t border-slate-200 pt-6">
-                            <div className="text-4xl md:text-4xl font-bold tracking-tight text-slate-900">
-                              {project.stat}
+                          <div className="mb-4 md:mb-6 pb-4 md:pb-6 border-t border-slate-200 pt-4 md:pt-6">
+                            <div className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
+                              {project.effect}
                             </div>
-                            <div className="text-xs text-slate-500 uppercase tracking-widest mt-2">
-                              {project.statLabel}
+                            <div className="text-[10px] md:text-xs text-slate-500 uppercase tracking-widest mt-1 md:mt-2">
+                              {project.effectSubtitle}
                             </div>
                           </div>
 
                           {/* Tech Stack Tags */}
-                          <div className="flex flex-wrap gap-2 mb-6">
-                            {project.tags.map((tag) => (
+                          <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
+                            {project.stacks.map((tag) => (
                               <span
                                 key={tag}
-                                className="text-xs font-medium text-slate-600 bg-white border border-slate-200 px-3 py-1.5 rounded-full"
+                                className="text-[10px] md:text-xs font-medium text-slate-600 bg-white border border-slate-200 px-2.5 py-1 md:px-3 md:py-1.5 rounded-full"
                               >
                                 {tag}
                               </span>
@@ -287,21 +219,27 @@ const FeaturedWork = () => {
                           </div>
 
                           {/* CTA Button */}
-                          <button className="w-full md:w-fit px-6 py-3 bg-slate-900 text-white rounded-full text-sm font-bold uppercase tracking-wider hover:bg-slate-800 transition-all duration-300 group">
-                            View Case Study
-                            <ArrowUpRight className="inline-block w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                          </button>
+                          {project.url && (
+                            <Link
+                              target="_blank"
+                              href={project.url}
+                              className="bg-slate-900 text-white p-2 w-10 h-10 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-slate-800 transition-all duration-300 group flex items-center justify-center transform hover:scale-105 active:scale-95"
+                            >
+                              <ArrowUpRight className="inline-block w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                            </Link>
+                          )}
                         </div>
                       </motion.div>
 
                       {/* Right Side - Image */}
-                      <div className="w-full md:w-2/3 relative h-64 md:h-auto">
+                      <div className="w-full lg:w-7/12 relative h-64 md:h-80 lg:h-auto min-h-[250px] lg:min-h-full">
                         <Image
                           src={project.image}
-                          alt={project.client}
+                          alt={project.title}
                           fill
                           className="object-cover"
                           priority={isActive}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                     </div>

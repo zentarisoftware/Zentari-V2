@@ -46,7 +46,7 @@ const clientTypes = [
 
 const WhoWeHelp = () => {
   return (
-    <section className="py-32 bg-white relative" data-scroll-section>
+    <section className="py-12 bg-white relative" data-scroll-section>
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           {/* Left Column: Sticky Header */}

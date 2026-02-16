@@ -52,7 +52,7 @@ const pricingPlans = [
 
 const Pricing = () => {
   return (
-    <section className="py-32 bg-slate-50 relative overflow-hidden" data-scroll-section>
+    <section className="py-12 bg-slate-50 relative overflow-hidden" data-scroll-section>
       <div className="container relative z-10">
         
         {/* Header */}

@@ -7,7 +7,7 @@ const features = [
     title: "Custom-Engineered Solutions",
     description:
       "We build software around your exact business logic and workflows — no templates, no unnecessary features, just systems built to fit.",
-    className: "md:col-span-3 md:row-span-1",
+    className: "lg:col-span-3 md:row-span-1",
     bg: "bg-white",
     delay: 0.1,
   },
@@ -16,7 +16,7 @@ const features = [
     title: "Built for Scale",
     description:
       "Our architecture is designed to support growth, high traffic, and expanding operations without performance trade-offs.",
-    className: "md:col-span-1 md:row-span-1",
+    className: "lg:col-span-1 md:row-span-1",
     bg: "bg-white",
     delay: 0.2,
   },
@@ -25,7 +25,7 @@ const features = [
     title: "Secure & Reliable",
     description:
       "We follow best practices in security, testing, and deployment to ensure your systems remain stable and protected.",
-    className: "md:col-span-1 md:row-span-1",
+    className: "lg:col-span-1 md:row-span-1",
     bg: "bg-white",
     delay: 0.3,
   },
@@ -34,7 +34,7 @@ const features = [
     title: "Transparent Collaboration",
     description:
       "You stay informed at every stage with structured updates, sprint reviews, and direct communication with our team.",
-    className: "md:col-span-1 md:row-span-1",
+    className: "lg:col-span-1 md:row-span-1",
     bg: "bg-slate-900 text-white",
     delay: 0.4,
   },
@@ -44,7 +44,7 @@ const features = [
 const WhyUs = () => {
   return (
     <section
-      className="py-32 bg-slate-50 relative overflow-hidden"
+      className="py-12 bg-slate-50 relative overflow-hidden"
       data-scroll-section
     >
       {/* Decorative Background Elements */}
@@ -74,7 +74,7 @@ const WhyUs = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
           {features.map((feature, i) => (
             <motion.div
               key={i}

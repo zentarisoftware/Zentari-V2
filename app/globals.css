@@ -7,7 +7,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto w-full h-full max-sm:px-4 max-md:px-6 max-w-7xl px-20 py-12;
+    @apply mx-auto w-full h-full max-sm:px-4 px-6 max-w-7xl md:px-12 py-12;
   }
 
   .heading {

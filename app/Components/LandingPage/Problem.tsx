@@ -30,8 +30,8 @@ const Problem_items = [
 
 const Problem = () => {
   return (
-    <section className="min-h-screen md:h-screen relative z-40 rounded-t-[3rem] md:rounded-t-[4rem] gradient-layer-solid py-20 md:py-0 flex items-center">
-      <div className="container px-6 mx-auto text-center z-[2] flex flex-col justify-center gap-12 md:justify-between md:gap-0 h-full md:py-12">
+    <section className="min-h-screen  relative z-40 rounded-t-[3rem] md:rounded-t-[4rem] gradient-layer-solid py-20 md:py-0 flex items-center">
+      <div className="container px-6 mx-auto text-center z-[2] flex flex-col justify-center max-lg:space-y-12 gap-16 md:justify-between md:gap-0 h-full md:py-12">
         <div>
           <motion.h6
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ const Problem = () => {
           </motion.h1>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-stretch md:items-start gap-6 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-stretch md:items-start gap-6 md:gap-4">
           {Problem_items.map((item, index) => (
             <motion.div
               key={index}
@@ -69,7 +69,7 @@ const Problem = () => {
             >
               {/* Decorative Gradient Bar - Hidden on Mobile to save space */}
               <div
-                className={`hidden md:block rounded-xl flex-shrink-0 h-30 ${
+                className={`hidden lg:block rounded-xl flex-shrink-0 h-30 ${
                   index % 2 === 0
                     ? "bg-gradient-to-b from-[#ffffff] to-transparent"
                     : "bg-gradient-to-b from-transparent to-[#ffffff]"

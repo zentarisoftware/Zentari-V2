@@ -3,54 +3,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
-
-const projects = [
-  {
-    id: "logistics",
-    client: "Vanguard Logistics",
-    image: "/projects/kaizen.png",
-    industry: "Supply Chain",
-    year: "2024",
-    title: "Global Freight Operations",
-    problem:
-      "Reliance on spreadsheets caused a 15% error rate in shipment tracking.",
-    solution:
-      "Centralized Logistics Management Platform (LMP) automating tracking and quotes.",
-    tech: ["Next.js", "PostgreSQL", "Google Maps"],
-    result: "40% Efficiency Boost",
-    bg: "bg-slate-50",
-  },
-  {
-    id: "fintech",
-    client: "Novus Finance",
-    industry: "FinTech",
-    image: "/projects/ayyan.png",
-    year: "2025",
-    title: "Next-Gen Investment",
-    problem:
-      "Legacy portal was confusing and slow, causing trust issues during volatility.",
-    solution:
-      "Real-time, WebSocket-powered dashboard with institutional-grade performance.",
-    tech: ["React", "WebSockets", "D3.js"],
-    result: "4.9/5 User Rating",
-    bg: "bg-white",
-  },
-  {
-    id: "retail",
-    client: "Aura Home",
-    industry: "E-Commerce",
-    image: "/projects/tt.png",
-    year: "2023",
-    title: "Headless Commerce",
-    problem:
-      "Shopify theme limited custom bundles and caused slow mobile load times.",
-    solution:
-      "Headless architecture using Shopify Plus backend and custom Next.js frontend.",
-    tech: ["Shopify Plus", "Next.js", "Vercel"],
-    result: "2x Mobile Sales",
-    bg: "bg-slate-50",
-  },
-];
+import { projects } from "@/app/Data";
 
 const ProjectItem = ({
   project,
@@ -70,7 +23,7 @@ const ProjectItem = ({
   return (
     <div
       ref={containerRef}
-      className={`relative min-h-screen flex items-center py-24 ${project.bg}`}
+      className={`relative min-h-screen flex items-center py-8`}
       data-scroll-section
     >
       <div className="container mx-auto">
@@ -119,7 +72,7 @@ const ProjectItem = ({
               </div>
 
               <div className="pt-8 flex flex-wrap gap-3">
-                {project.tech.map((t) => (
+                {project.stacks.map((t) => (
                   <span
                     key={t}
                     className="px-4 py-2 bg-white border border-slate-100 shadow-sm text-slate-600 text-xs font-semibold rounded-lg"
@@ -132,7 +85,7 @@ const ProjectItem = ({
               <div className="pt-10 flex items-center gap-8">
                 <div>
                   <div className="text-3xl font-bold text-slate-900 tracking-tight">
-                    {project.result}
+                    {project.effect} <span className="text-sm tracking-normal font-normal text-slate-500">{project.effectSubtitle}</span>
                   </div>
                   <div className="text-sm text-slate-500 font-medium mt-1">
                     Key Outcome
@@ -149,7 +102,7 @@ const ProjectItem = ({
                 <Image
                   fill
                   src={project.image}
-                  alt={project.client}
+                  alt={project.title}
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Overlay Interaction */}
