@@ -30,8 +30,8 @@ const Problem_items = [
 
 const Problem = () => {
   return (
-    <section className="min-h-screen  relative z-40 rounded-t-[3rem] md:rounded-t-[4rem] gradient-layer-solid py-20 md:py-0 flex items-center">
-      <div className="container px-6 mx-auto text-center z-[2] flex flex-col justify-center max-lg:space-y-12 gap-16 md:justify-between md:gap-0 h-full md:py-12">
+    <section className="h-full min-h-screen relative z-40 rounded-t-[3rem] gradient-layer-solid">
+      <div className="container mx-auto text-center z-[2] flex flex-col justify-between max-md:gap-6 h-full md:h-screen">
         <div>
           <motion.h6
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ const Problem = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-medium text-slate-900 leading-[1.1] tracking-tight mb-8 md:mb-0"
+            className="text-4xl md:text-5xl lg:text-7xl font-medium text-slate-900 leading-[1.1] tracking-tight"
           >
             Your business is growing —
             <br />
@@ -55,7 +55,7 @@ const Problem = () => {
           </motion.h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-stretch md:items-start gap-6 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-stretch md:items-start gap-6 md:gap-4 h-fit">
           {Problem_items.map((item, index) => (
             <motion.div
               key={index}
@@ -63,7 +63,7 @@ const Problem = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`flex-1 flex flex-col gap-4 md:gap-2 h-auto md:h-80 ${
+              className={`flex-1 flex flex-col gap-4 md:gap-2 h-auto md:h-full ${
                 index % 2 === 0 ? "md:flex-col-reverse" : ""
               }`}
             >
