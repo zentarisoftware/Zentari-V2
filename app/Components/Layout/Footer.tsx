@@ -6,9 +6,10 @@ const footerLinks = [
   {
     title: "Company",
     links: [
-      { label: "About", href: "#" },
+      { label: "About", href: "/about" },
+      { label: "Pricing", href: "/pricing" },
       { label: "Careers", href: "#" },
-      { label: "Contact", href: "#" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
@@ -67,7 +68,9 @@ const Footer = () => {
           <h1 className="text-[15vw] font-squada-one leading-[0.8] font-bold tracking-wider text-slate-900 uppercase">
             Zentari
           </h1>
-          <h2 className="text-2xl text-slate-400 tracking-wider">Tech Solutions</h2>
+          <h2 className="text-2xl text-slate-400 tracking-wider">
+            Tech Solutions
+          </h2>
         </div>
 
         {/* Bottom Section */}

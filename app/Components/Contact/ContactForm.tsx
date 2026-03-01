@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "motion/react";
 import { Mail, ArrowRight, Loader2 } from "lucide-react";
 
 const ContactForm = () => {
