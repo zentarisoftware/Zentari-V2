@@ -1,19 +1,91 @@
 "use client";
 import React, { useState } from "react";
-import { Mail, ArrowRight, Loader2 } from "lucide-react";
+import { ArrowRight, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    company: "",
+    projectType: "",
+    message: "",
+  });
 
-  // This is just a UI state demo
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => setIsSubmitting(false), 2000);
+    setStatus("idle");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setStatus("success");
+      setForm({
+        name: "",
+        email: "",
+        company: "",
+        projectType: "",
+        message: "",
+      });
+    } catch (err: unknown) {
+      setStatus("error");
+      setErrorMessage(
+        err instanceof Error ? err.message : "Something went wrong.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  if (status === "success") {
+    return (
+      <div className="flex flex-col items-center justify-center text-center py-20 space-y-4">
+        <CheckCircle className="w-14 h-14 text-green-500" />
+        <h3 className="text-2xl font-medium text-slate-900">Message Sent!</h3>
+        <p className="text-slate-500 max-w-sm">
+          Thanks for reaching out. We&apos;ll get back to you within 24 hours.
+        </p>
+        <button
+          onClick={() => setStatus("idle")}
+          className="mt-4 px-6 py-3 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors"
+        >
+          Send Another Message
+        </button>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
+      {status === "error" && (
+        <div className="flex items-start gap-3 p-4 rounded-xl bg-red-50 border border-red-100 text-red-700 text-sm">
+          <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+          <p>{errorMessage}</p>
+        </div>
+      )}
+
       <div className="space-y-6">
         {/* Name */}
         <div className="relative group">
@@ -21,6 +93,8 @@ const ContactForm = () => {
             type="text"
             required
             id="name"
+            value={form.name}
+            onChange={handleChange}
             className="peer w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-slate-900 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
             placeholder=" "
           />
@@ -38,6 +112,8 @@ const ContactForm = () => {
             type="email"
             required
             id="email"
+            value={form.email}
+            onChange={handleChange}
             className="peer w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-slate-900 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
             placeholder=" "
           />
@@ -55,6 +131,8 @@ const ContactForm = () => {
             <input
               type="text"
               id="company"
+              value={form.company}
+              onChange={handleChange}
               className="peer w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-slate-900 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
               placeholder=" "
             />
@@ -69,16 +147,18 @@ const ContactForm = () => {
           <div className="relative group">
             <select
               id="projectType"
+              value={form.projectType}
+              onChange={handleChange}
               className="peer w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-slate-900 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none cursor-pointer"
             >
-              <option value="" disabled selected>
+              <option value="" disabled>
                 Select Project Type
               </option>
-              <option defaultValue="web-development">Web Application</option>
-              <option defaultValue="mobile-app">Mobile App</option>
-              <option defaultValue="system-architecture">System Architecture</option>
-              <option defaultValue="consulting">Tech Consulting</option>
-              <option defaultValue="other">Other</option>
+              <option value="Web Application">Web Application</option>
+              <option value="Mobile App">Mobile App</option>
+              <option value="System Architecture">System Architecture</option>
+              <option value="Tech Consulting">Tech Consulting</option>
+              <option value="Other">Other</option>
             </select>
             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
               <ArrowRight className="w-4 h-4 rotate-90" />
@@ -92,6 +172,8 @@ const ContactForm = () => {
             id="message"
             required
             rows={6}
+            value={form.message}
+            onChange={handleChange}
             className="peer w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 text-slate-900 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
             placeholder=" "
           ></textarea>
