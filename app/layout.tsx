@@ -18,6 +18,32 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Zentari Software",
   description: "Zentari Software is a software development company that provides custom software development services to businesses.",
+  metadataBase: new URL("https://zentariph.com"),
+  openGraph: {
+    title: "Zentari Software",
+    description:
+      "Zentari Software is a software development company that provides custom software development services to businesses.",
+    url: "https://zentariph.com",
+    siteName: "Zentari Software",
+    images: [
+      {
+        url: "/icon.png",
+        alt: "Zentari Software icon",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zentari Software",
+    description:
+      "Zentari Software is a software development company that provides custom software development services to businesses.",
+    images: ["/icon.png"],
+  },
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
