@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 import {
   motion,
   useMotionValue,
@@ -90,9 +91,14 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               >
-                <button className="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-all transform hover:scale-105 shadow-xl active:scale-95 text-[15px]">
+                <Link
+                  href="https://www.facebook.com/zentarisoftwares"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full sm:w-auto px-10 py-4 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-all transform hover:scale-105 shadow-xl active:scale-95 text-[15px]"
+                >
                   Start Free
-                </button>
+                </Link>
               </motion.div>
               {/* CTA */}
               <motion.div
@@ -101,9 +107,12 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               >
-                <button className="w-full sm:w-auto px-10 py-4 border border-slate-200 text-slate-900 rounded-full font-medium hover:bg-slate-200 transition-all transform hover:scale-105 shadow-xl duration-200 active:scale-95 text-[15px]">
+                <Link
+                  href="/portfolio"
+                  className="block w-full sm:w-auto px-10 py-4 border border-slate-200 text-slate-900 rounded-full font-medium hover:bg-slate-200 transition-all transform hover:scale-105 shadow-xl duration-200 active:scale-95 text-[15px]"
+                >
                   View our work
-                </button>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -128,7 +137,7 @@ const Hero = () => {
               <div className="w-px h-8 bg-slate-200 hidden md:block"></div>
               <div className="text-center md:text-left">
                 <span className="flex items-center justify-center md:justify-start text-xl font-semibold md:text-2xl text-slate-900 leading-none">
-                  <Counter value={50} />+
+                  <Counter value={150} />+
                 </span>
                 <span className="text-[10px] text-slate-400 uppercase tracking-widest mt-1.5 block">
                   Projects Launched

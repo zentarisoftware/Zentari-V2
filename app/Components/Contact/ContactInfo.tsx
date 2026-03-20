@@ -28,7 +28,7 @@ const contactDetails = [
     icon: Facebook,
     label: "Facebook",
     value: "Zentari Facebook",
-    href: "https://www.facebook.com/zentarisoftware",
+    href: "https://www.facebook.com/zentarisoftwares",
     hoverColor: "group-hover:bg-blue-600",
   },
   {

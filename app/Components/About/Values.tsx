@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
-import { CheckCircle2 } from "lucide-react";
 
 const values = [
   {
@@ -37,7 +36,7 @@ const Values = () => {
                 Why industry leaders <br /> trust Zentari.
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                We've stripped away the agency bloat and focused entirely on
+                We&apos;ve stripped away the agency bloat and focused entirely on
                 what matters: delivering reliable, high-performace software that
                 solves real problems.
               </p>

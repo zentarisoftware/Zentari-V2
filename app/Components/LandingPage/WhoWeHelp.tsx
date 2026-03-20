@@ -77,7 +77,7 @@ const WhoWeHelp = () => {
                 transition={{ delay: 0.2 }}
                 className="text-lg text-slate-600 mb-8 leading-relaxed"
               >
-                Whether you're validating an idea or modernizing a global
+                Whether you&apos;re validating an idea or modernizing a global
                 platform, our engineering adapts to your specific constraints
                 and goals.
               </motion.p>

@@ -71,17 +71,6 @@ const ProjectItem = ({
                 </div>
               </div>
 
-              <div className="pt-8 flex flex-wrap gap-3">
-                {project.stacks.map((t) => (
-                  <span
-                    key={t}
-                    className="px-4 py-2 bg-white border border-slate-100 shadow-sm text-slate-600 text-xs font-semibold rounded-lg"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
               <div className="pt-10 flex items-center gap-8">
                 <div>
                   <div className="text-3xl font-bold text-slate-900 tracking-tight">
