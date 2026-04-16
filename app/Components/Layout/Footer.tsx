@@ -1,13 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const footerLinks = [
   {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Pricing", href: "/pricing" },
       { label: "Careers", href: "#" },
       { label: "Contact", href: "/contact" },
     ],

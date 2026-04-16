@@ -24,10 +24,6 @@ const Nav_items = [
     href: "/solutions",
   },
   {
-    name: "Pricing",
-    href: "/pricing",
-  },
-  {
     name: "Portfolio",
     href: "/portfolio",
   },
@@ -100,7 +96,13 @@ const Nav = () => {
           className="text-2xl font-light tracking-tight text-slate-900 ml-2"
           onClick={() => setIsOpen(false)}
         >
-          <Image src="/logo.png" alt="Logo" width={120} height={120} />
+          <Image
+            src="/logo.webp"
+            alt="Logo"
+            width={120}
+            height={44}
+            style={{ height: "auto" }}
+          />
         </Link>
 
         {/* Desktop Navigation Links */}

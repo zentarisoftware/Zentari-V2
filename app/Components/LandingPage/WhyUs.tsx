@@ -44,7 +44,7 @@ const features = [
 const WhyUs = () => {
   return (
     <section
-      className="py-12 bg-slate-50 relative overflow-hidden"
+      className="py-8 sm:py-12 bg-slate-50 relative overflow-hidden"
       data-scroll-section
     >
       {/* Decorative Background Elements */}
@@ -52,12 +52,12 @@ const WhyUs = () => {
 
       <div className="container relative z-10">
         {/* Section Header */}
-        <div className="max-w-2xl mb-8">
+        <div className="max-w-2xl mb-6 sm:mb-8">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block"
+            className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 sm:mb-4 block"
           >
             Why Choose Zentari
           </motion.span>
@@ -66,7 +66,7 @@ const WhyUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-medium text-slate-900 leading-[1.1] tracking-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-medium text-slate-900 leading-[1.1] tracking-tight"
           >
             Software partners, <br />
             not just vendors.
@@ -74,7 +74,7 @@ const WhyUs = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:auto-rows-[minmax(260px,auto)] lg:auto-rows-[minmax(300px,auto)]">
           {features.map((feature, i) => (
             <motion.div
               key={i}
@@ -82,28 +82,28 @@ const WhyUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: feature.delay, duration: 0.5 }}
-              className={`p-4 md:p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col justify-between border border-slate-100 ${feature.className} ${feature.bg}`}
+              className={`p-4 sm:p-5 md:p-8 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col justify-between border border-slate-100 ${feature.className} ${feature.bg}`}
             >
-              <div className="mb-6">
+              <div className="mb-3 sm:mb-6">
                 <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 ${feature.bg.includes("slate-900") ? "bg-slate-800 text-white" : "bg-slate-100 text-slate-900"}`}
+                  className={`w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-8 transition-transform duration-500 group-hover:scale-110 ${feature.bg.includes("slate-900") ? "bg-slate-800 text-white" : "bg-slate-100 text-slate-900"}`}
                 >
                   {feature.icon}
                 </div>
                 <h3
-                  className={`text-3xl font-light tracking-tight mb-6 ${feature.bg.includes("slate-900") ? "text-white" : "text-slate-900"}`}
+                  className={`text-xl sm:text-2xl md:text-3xl font-light tracking-tight mb-3 sm:mb-6 ${feature.bg.includes("slate-900") ? "text-white" : "text-slate-900"}`}
                 >
                   {feature.title}
                 </h3>
                 <p
-                  className={`leading-relaxed text-lg max-w-xl ${feature.bg.includes("slate-900") ? "text-slate-400" : "text-slate-500"}`}
+                  className={`leading-relaxed text-sm sm:text-base md:text-lg max-w-xl ${feature.bg.includes("slate-900") ? "text-slate-400" : "text-slate-500"}`}
                 >
                   {feature.description}
                 </p>
               </div>
 
               {/* Interactive Arrow for "Action" feel */}
-              <div className="flex justify-end mt-auto">
+              <div className="hidden sm:flex justify-end mt-auto">
                 <div
                   className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 ${feature.bg.includes("slate-900") ? "border-slate-700 text-white" : "border-slate-200 text-slate-900"}`}
                 >

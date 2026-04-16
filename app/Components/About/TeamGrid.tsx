@@ -1,31 +1,32 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const team = [
   {
-    name: "Alex Jensen",
-    role: "Founder & Technical Director",
-    bio: "Former Lead Architect at Stripe. Obsessed with scalable systems and clean APIs.",
-    initials: "AJ",
+    name: "Imogen Inocentes",
+    role: "CEO & Lead Software Developer",
+    bio: "Leads product engineering strategy and builds robust systems that scale with client growth.",
+    image: "/team/imogen-inocentes.png",
   },
   {
-    name: "Sarah Chen",
-    role: "Head of Product",
-    bio: "Specializes in translating complex user requirements into intuitive interfaces.",
-    initials: "SC",
+    name: "Gayle Florencio",
+    role: "UI/UX and Graphics Designer",
+    bio: "Designs clear user journeys and polished visual assets that strengthen brand identity.",
+    image: "/team/gayle-florencio.jpg",
   },
   {
-    name: "Marcus Thorne",
-    role: "Lead DevOps Engineer",
-    bio: "15+ years managing high-availability infrastructure for enterprise fintech.",
-    initials: "MT",
+    name: "Jennifer Salo",
+    role: "Marketing Lead",
+    bio: "Shapes campaigns and messaging that connect business goals with customer needs.",
+    image: "/team/jennifer-salo.jpg",
   },
   {
-    name: "Elena Rodriguez",
-    role: "Senior Frontend Developer",
-    bio: "Expert in React performance optimization and accessible design systems.",
-    initials: "ER",
+    name: "Jerome Santos",
+    role: "Sales Lead",
+    bio: "Drives client relationships and sales strategy from first conversation to successful delivery.",
+    image: "/team/jerome-santos.jpg",
   },
 ];
 
@@ -57,11 +58,14 @@ const TeamGrid = () => {
               transition={{ delay: i * 0.1 }}
               className="group"
             >
-              {/* Avatar Placeholder */}
-              <div className="aspect-[4/5] bg-slate-100 mb-6 rounded-2xl relative overflow-hidden group-hover:bg-slate-200 transition-colors">
-                <div className="absolute inset-0 flex items-center justify-center text-slate-300 font-bold text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">
-                  {member.initials}
-                </div>
+              <div className="aspect-[4/5] bg-slate-100 mb-6 rounded-2xl relative overflow-hidden">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-contain object-center"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
               </div>
 
               <div>
