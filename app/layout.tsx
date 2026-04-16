@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import SmoothScroll from "./Components/Providers/SmoothScroll";
 import FramerPreloader from "./Components/Providers/FramerPreloader";
 import "./globals.css";
@@ -62,6 +63,7 @@ export default function RootLayout({
           <SmoothScroll>{children}</SmoothScroll>
           <Footer />
         </FramerPreloader>
+        <Analytics />
       </body>
     </html>
   );
